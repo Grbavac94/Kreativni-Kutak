@@ -1,0 +1,15 @@
+from sklearn import tree
+from matplotlib import pyplot as plt
+
+x = [(0, 0), (1, 1)]
+y = [0, 1]
+
+clf = tree.DecisionTreeClassifier(criterion='entropy')
+clf = clf.fit(x, y)
+
+prediction = clf.predict([[-1, 1]])
+print(prediction)
+
+
+tree.plot_tree(clf)
+plt.show()
